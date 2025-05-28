@@ -1,0 +1,39 @@
+[package]
+name = "csifish"
+version = "0.1.0"
+edition = "2021"
+
+
+[features]
+default = []
+parallel = []
+
+[profile.test]
+opt-level = 3
+
+[profile.release]
+opt-level = 3
+
+[build-dependencies]
+cc = "1.0"
+
+[dependencies]
+rand = "0.8.5"
+rayon = "1.10.0"
+ark-ff-macros = "0.4.2"
+subtle = "2.5.0"
+sha3 = "0.10.8"
+gmp-mpfr-sys = { version = "1.6.2", features=["use-system-libs"]}
+rug = { version = "1.24.1", default-features = false, features = ["float", "integer"]}
+lazy_static = "1.4.0"
+signature = "2.3.0-pre.4"
+
+[dev-dependencies]
+crypto-bigint = "0.6.0-pre.12"
+#criterion = "0.5.1"
+
+#[[bench]]
+#name = "benchmark"
+#harness = false
+
+
