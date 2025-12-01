@@ -6,12 +6,11 @@ CSI‑FiSh (`csifish` crate) is a pure‑Rust implementation of the CSI-FiSh: Ef
 
 The design combines **Supersingular Isogeny** techniques with class‑group computations to obtain post‑quantum signatures with very small public keys.
 
-This repository provides:
+This repo provides:
 
 * Blinded, constant‑time arithmetic for the quadratic‑imaginary class group underlying CSI‑FiSh.
-* Highly optimised modular inversion written in hand‑tuned assembly (`x86_64`, `aarch64`) and automatically selected at build time.
 * Trait‑based API for key generation, signing and verification.
-* Optional **Rayon** parallelisation (`parallel` Cargo feature).
+* Rayon parallelisation (`parallel` Cargo feature).
 
 ---
 
@@ -22,14 +21,6 @@ This repository provides:
 | **Rust** | nightly `1.78` or newer (uses `generic_const_exprs`)    |
 | **GMP**  | `6.2+` development headers (via `rug` / `gmp-mpfr-sys`) |
 | **OS**   | Linux, macOS, Windows (x86\_64 / AArch64 tested)        |
-
-```bash
-# Debian / Ubuntu
-sudo apt install libgmp-dev build-essential pkg-config
-
-# Fedora
-sudo dnf install gmp-devel
-```
 
 ---
 
@@ -90,8 +81,8 @@ See [`examples/`](examples) for complete runnable programs.
 
 ## Security Notice
 
-Although care was taken to follow constant‑time coding practices, **this code has not been formally audited**.
-Do **not** deploy in production systems or handle sensitive key material until a thorough cryptographic review has been completed.
+Although care was taken to follow constant‑time coding practices, **this code is not guaranteed to be constant-time**.
+Do **not** deploy in production systems or handle sensitive key material.
 
 ---
 
